@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Przepisy studenckie</string>
+
+    <!-- Recipes names -->
+    <string-array name="recipes_names">
+        <item>Parówki w czajniku</item>
+        <item>Grillowane parówki</item>
+        <item>Parówki z mikrofali</item>
+    </string-array>
+
+    <!-- Pictures -->
+    <array name="recipes_pictures">
+        <item>@drawable/parowki_czajnik</item>
+        <item>@drawable/parowki_grill</item>
+        <item>@drawable/parowki_mikrofala</item>
+    </array>
+</resources>
