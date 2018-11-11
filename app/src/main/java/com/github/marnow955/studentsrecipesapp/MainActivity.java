@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     TypedArray recipes_pics;
 
     List<Recipe> recipes;
-    ListView recipesListView;
+//    ListView recipesListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +35,16 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             recipes.add(recipe);
         }
 
-        recipesListView = (ListView) findViewById(R.id.recipes_list);
-        RecipesAdapter adapter = new RecipesAdapter(this, recipes);
-        recipesListView.setAdapter(adapter);
+        RecipesListFragment recipesListFragment = new RecipesListFragment();
+        recipesListFragment.setRecipes(recipes);
+        getFragmentManager().beginTransaction()
+                .add(R.id.recipes_list_fragment, recipesListFragment).commit();
 
-        recipesListView.setOnItemClickListener(this);
+//        recipesListView = (ListView) findViewById(R.id.recipes_list);
+//        RecipesAdapter adapter = new RecipesAdapter(this, recipes);
+//        recipesListView.setAdapter(adapter);
+
+//        recipesListView.setOnItemClickListener(this);
     }
 
     @Override

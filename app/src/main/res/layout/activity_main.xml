@@ -8,9 +8,29 @@
     android:orientation="vertical"
     tools:context="com.github.marnow955.studentsrecipesapp.MainActivity">
 
-    <ListView
-        android:id="@+id/recipes_list"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:id="@+id/root_fragment">
+
+
+        <FrameLayout
+            android:id="@+id/recipes_list_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_recipes_list" />
+
+        <FrameLayout
+            android:id="@+id/recipe_details_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_recipe_details" />
+
+
+    </FrameLayout>
+    <!--<ListView-->
+        <!--android:id="@+id/recipes_list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
 
 </LinearLayout>
