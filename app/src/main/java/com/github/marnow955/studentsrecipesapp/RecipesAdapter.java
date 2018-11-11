@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,12 +16,19 @@ import java.util.List;
  */
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder> {
+
+    public interface OnItemClickListener {
+        void onItemClick(Recipe item);
+    }
+
     Context context;
     List<Recipe> recipes;
+    private final OnItemClickListener listener;
 
-    public RecipesAdapter(Context context) {
+    public RecipesAdapter(Context context, OnItemClickListener listener) {
         this.context = context;
         recipes = new ArrayList<>();
+        this.listener = listener;
     }
 
     @Override
@@ -35,13 +41,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.bind(recipes.get(position));
+        holder.bind(recipes.get(position), listener);
     }
-//
-//    @Override
-//    public long getItemId(int position) {
-//        return recipes.indexOf(recipes.get(position));
-//    }
 
     @Override
     public int getItemCount() {
@@ -63,32 +64,16 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             recipe_pic = itemView.findViewById(R.id.recipe_pic);
         }
 
-        void bind(Recipe recipe) {
+        void bind(final Recipe recipe, final OnItemClickListener listener) {
             this.recipe = recipe;
             recipe_name.setText(recipe.getRecipeName());
             recipe_pic.setImageResource(recipe.getRecipe_pic_id());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onItemClick(recipe);
+                }
+            });
         }
     }
-
-//    @Override
-//    public View getView(int position, View convertView, ViewGroup parent) {
-//
-//        ViewHolder holder = null;
-//
-//        LayoutInflater inflater = (LayoutInflater) context
-//                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        if (convertView == null) {
-//            convertView = inflater.inflate(R.layout.recipe_list_item, null);
-//            holder = new ViewHolder();
-//
-//            holder.recipe_name = (TextView) convertView.findViewById(R.id.recipe_name);
-//            holder.recipe_pic = (ImageView) convertView.findViewById(R.id.recipe_pic);
-//
-//            Recipe row_pos = recipes.get(position);
-//
-//            holder.recipe_pic.setImageResource(row_pos.getRecipe_pic_id());
-//            holder.recipe_name.setText(row_pos.getRecipeName());
-//        }
-//        return convertView;
-//    }
 }

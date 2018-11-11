@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Marek Noworolnik on 10.11.2018.
  */
 
-public class RecipesListFragment extends Fragment {
+public class RecipesListFragment extends Fragment implements RecipesAdapter.OnItemClickListener {
 
     private RecyclerView recipesRecyclerView;
     private List<Recipe> recipes;
@@ -34,12 +34,27 @@ public class RecipesListFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         recipesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recipesAdapter = new RecipesAdapter(getContext());
+        recipesAdapter = new RecipesAdapter(getContext(), this);
         recipesRecyclerView.setAdapter(recipesAdapter);
         recipesAdapter.setRecipes(recipes);
     }
 
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
+    }
+
+    @Override
+    public void onItemClick(Recipe item) {
+        if (getActivity().getFragmentManager()
+                .findFragmentById(R.id.recipe_details_fragment) != null) {
+            getActivity().getFragmentManager().popBackStack();
+        }
+        RecipeDetailsFragment recipeDetailsFragment = new RecipeDetailsFragment();
+        Bundle args = new Bundle();
+        args.putParcelable("recipe", item);
+        recipeDetailsFragment.setArguments(args);
+        getActivity().getFragmentManager().beginTransaction()
+                .replace(R.id.recipe_details_fragment, recipeDetailsFragment)
+                .addToBackStack(null).commit();
     }
 }
