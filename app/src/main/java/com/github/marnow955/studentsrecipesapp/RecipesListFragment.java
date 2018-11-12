@@ -1,6 +1,7 @@
 package com.github.marnow955.studentsrecipesapp;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.Iterator;
 import java.util.List;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by Marek Noworolnik on 10.11.2018.
@@ -50,11 +54,30 @@ public class RecipesListFragment extends Fragment implements RecipesAdapter.OnIt
             getActivity().getFragmentManager().popBackStack();
         }
         RecipeDetailsFragment recipeDetailsFragment = new RecipeDetailsFragment();
+        recipeDetailsFragment.setTargetFragment(RecipesListFragment.this, getTargetRequestCode());
         Bundle args = new Bundle();
         args.putParcelable("recipe", item);
         recipeDetailsFragment.setArguments(args);
         getActivity().getFragmentManager().beginTransaction()
                 .replace(R.id.recipe_details_fragment, recipeDetailsFragment)
                 .addToBackStack(null).commit();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK) {
+            Recipe recipe = data.getParcelableExtra("recipe_to_remove");
+            Iterator<Recipe> iterator = recipes.iterator();
+            while (iterator.hasNext()) {
+                Recipe r = iterator.next();
+                if(r.getRecipeName().equals(recipe.getRecipeName())) {
+                    iterator.remove();
+                    break;
+                }
+            }
+            recipesAdapter.notifyDataSetChanged();
+        }
     }
 }

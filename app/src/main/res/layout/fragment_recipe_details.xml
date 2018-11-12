@@ -29,6 +29,11 @@
                 android:padding="20dp"
                 android:text="1.rrgrgrgdrdrg\n2. fdgdfgdggd\n3 fsdfsdfsfsfsdfsfsfsf"
                 android:textSize="20sp" />
+            <Button
+                android:id="@+id/remove_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usuń"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
