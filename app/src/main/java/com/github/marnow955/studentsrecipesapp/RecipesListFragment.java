@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.RecyclerView;
 
 import java.util.Iterator;
 import java.util.List;
@@ -67,17 +67,18 @@ public class RecipesListFragment extends Fragment implements RecipesAdapter.OnIt
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             Recipe recipe = data.getParcelableExtra("recipe_to_remove");
             Iterator<Recipe> iterator = recipes.iterator();
             while (iterator.hasNext()) {
                 Recipe r = iterator.next();
-                if(r.getRecipeName().equals(recipe.getRecipeName())) {
+                if (r.getRecipeName().equals(recipe.getRecipeName())) {
                     iterator.remove();
                     break;
                 }
             }
             recipesAdapter.notifyDataSetChanged();
+            ((MainActivity) getActivity()).removeRecipe(recipe);
         }
     }
 }
