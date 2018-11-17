@@ -11,11 +11,17 @@ public class Recipe implements Parcelable{
 
     private String recipeName;
     private int recipe_pic_id;
-    private String recipeSteps = "1. test fdsfsd\n2. rerser \n3. sfgsdf";
+    private String recipeSteps;
 
     public Recipe(String recipeName, int recipe_pic_id) {
         this.recipeName = recipeName;
         this.recipe_pic_id = recipe_pic_id;
+    }
+
+    public Recipe(String recipeName, int recipe_pic_id, String recipeSteps) {
+        this.recipeName = recipeName;
+        this.recipe_pic_id = recipe_pic_id;
+        this.recipeSteps = recipeSteps;
     }
 
     public String getRecipeName() {

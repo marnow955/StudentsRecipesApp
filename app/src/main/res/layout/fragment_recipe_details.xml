@@ -19,6 +19,7 @@
                 android:id="@+id/recipe_pic"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:scaleType="centerCrop"
                 android:background="@android:color/darker_gray"
                 android:src="@drawable/parowki_czajnik" />
 
@@ -27,12 +28,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
-                android:text="1.rrgrgrgdrdrg\n2. fdgdfgdggd\n3 fsdfsdfsfsfsdfsfsfsf"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
             <Button
                 android:id="@+id/remove_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:text="Usuń"/>
         </LinearLayout>
     </ScrollView>

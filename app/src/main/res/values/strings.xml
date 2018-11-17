@@ -1,17 +1,199 @@
 <resources>
     <string name="app_name">Przepisy studenckie</string>
 
-    <!-- Recipes names -->
-    <string-array name="recipes_names">
-        <item>Parówki w czajniku</item>
-        <item>Grillowane parówki</item>
-        <item>Parówki z mikrofali</item>
-    </string-array>
-
-    <!-- Pictures -->
-    <array name="recipes_pictures">
-        <item>@drawable/parowki_czajnik</item>
-        <item>@drawable/parowki_grill</item>
-        <item>@drawable/parowki_mikrofala</item>
+    <array name="recipe1">
+        <item name="name">Parówki w czajniku</item>
+        <item name="picture">@drawable/parowki_czajnik</item>
+        <item name="steps">Parówki w czajniku:\n
+            1. Zalej swój czajnik (koniecznie elektryczny) wodą z kranu.\n
+            2. Włóż parówki do środka.\n
+            3. Dodaj szczyptę soli.\n
+            4. Zamknij czajnik i włącz grzanie wody.\n
+            Parówki gotowe!\n</item>
     </array>
+    <array name="recipe2">
+        <item name="name">Grillowane parówki</item>
+        <item name="picture">@drawable/parowki_grill</item>
+        <item name="steps">Parówki grillowane:\n
+            1. Włącz żelazko.\n
+            2. Wykorzystaj swojego współlokatora, aby trzymał żelazko gorącym do góry.\n
+            3. Połóż parówki na żelazku.\n
+            Parówki gotowe!\n</item>
+    </array>
+    <array name="recipe3">
+        <item name="name">Grillowane parówki 2</item>
+        <item name="picture">@drawable/parowki_grill_2</item>
+        <item name="steps">Parówki grillowane 2:\n
+        Idealny sposób na grillowaną parówkę w zimie!\n
+        Wystarczy położyć parówki na kaloryferze.\n
+        * Pod warunkiem że w Twoim akademiku nie odcięli ogrzewania</item>
+    </array>
+    <array name="recipe4">
+        <item name="name">Parówki po inżyniersku</item>
+        <item name="picture">@drawable/electric_sousage</item>
+        <item name="steps">Przepis na parówki po inżyniersku:\n
+        Do wykonania tego przepisu potrzebujesz jedynie 2 widelców oraz kawałka kabla z wtyczką.\n
+        1. Rozetnij kabel i znajdź przewód liniowy oraz neutralny (brązowy i niebieski)\n
+        2. Końcówki przewodów zaplącz wokół widelców.\n
+        3. Wbij widelce w końcówki parówki\n
+        4. Włóż wtyczkę do gniazdka\n
+        Parówki gotowe!\n\n
+        Jeśli chcesz zrobić wrażenie na znajomych a posiadasz diody LED, to wsadź je do parówki!</item>
+    </array>
+    <array name="recipe5">
+        <item name="name">Parówki z mikrofali</item>
+        <item name="picture">@drawable/parowki_mikrofala</item>
+        <item name="steps">Parówki z mikrofali:\n
+            1. Otwórz mikrofalę.\n
+            2. Sprawdź czy nic w środku nie ma (np. współlokatora)\n
+            3. Parówki na talerzyku włóż do środka/\n
+            4. Zamknij mikrofalę i włącz czas grzania na 2 minuty (jeżeli lubisz al dente to na 1 minutę)\n
+            Parówki gotowe!\n</item>
+    </array>
+    <array name="recipe6">
+        <item name="name">Parówkowe sushi</item>
+        <item name="picture">@drawable/sushi</item>
+        <item name="steps">Przepis na parówkowe sushi:\n
+        1. Ugotuj porcję ryżu\n
+        2. Dopraw ryż zaprawą octową (3 łyżki octu ryżowego, pół łyżeczki soli, 2 łyżeczki cukru)\n
+        3. Uformuj ryż w kształt jak do nigiri (po prostu weź garść i miętol aż się zlepi)\n
+        4. Na wierzch połóż połowkę parówki\n
+        5. Tak przygotowane sushi owiń liściem nori (zastąp czarną taśmą jeśli Cię nie stać -
+        tylko nie zapomnij uprzedzić gości o niejadalnym fragmencie)</item>
+    </array>
+    <array name="recipe7">
+        <item name="name">Jajko w sercu</item>
+        <item name="picture">@drawable/parowka_jajko_sadzone</item>
+        <item name="steps">Jajko sadzone w sercu:\n
+        1. Obierz parówkę z foli\n
+        2. Przetnij prawie do końca wzdłóż\n
+        3. Końce wywiń na zewnątrz i zepnij wykałaczką\n
+        4. Obsmaż serce z obu stron\n
+        5. Po obróceniu serca wbij do środka jajko\n
+        Romantyczna kolacja gotowa!</item>
+    </array>
+    <array name="recipe8">
+        <item name="name">Kanapka z serem i ketchupem</item>
+        <item name="picture">@drawable/kanapka_ser_ketchup</item>
+        <item name="steps">Kanapka z serem i ketchupem:\n
+        1. Zapytaj współlokatora czy pożyczy Ci trochę sera\n
+        [Masz wspaniałego współlokatora]\n
+        2. Połóż na kromce ser i polej ketchupem\n
+        [Twój współlokator to człek bez litości]\n
+        3. No nic, chlebek z ketchupem to w końcu i tak dobre jedzonko.</item>
+    </array>
+    <array name="recipe9">
+        <item name="name">Parówki ośmiorniczki</item>
+        <item name="picture">@drawable/parowki_osmiorniczki</item>
+        <item name="steps">Parówki ośmiorniczki:\n
+        1. Parowki przekrój na pół\n
+        2. Natnij z każdego końca na krzyż, na głębokość ok. 2-3 cm\n
+        3. Ugotuj tak jak zwykle\n
+        4. Z ketchupu lub musztardy zrób oczka</item>
+    </array>
+    <array name="recipe10">
+        <item name="name">Parówki ośmiorniczki 2</item>
+        <item name="picture">@drawable/parowki_osmiorniczki_2</item>
+        <item name="steps">Parówki ośmiorniczki 2\n
+        1. Parówki przekrój na pół\n
+        2. W końce parówek wbij kilka kawałków makaronu spaghetti (ok. 6cm)\n
+        3. Ugotuj\n
+        Parówki gotowe!!!</item>
+    </array>
+    <array name="recipe11">
+        <item name="name">Parówkowe łódeczki</item>
+        <item name="picture">@drawable/parowki_lodeczki</item>
+        <item name="steps">Parówkowe łódeczki\n
+        1. Rozetnij parówki przez środek zostawiając nierozcięte końce\n
+        2. Rozchyl brzegi parówki 2 wykałaczkami\n
+        3. Obsmaż z obu stron\n
+        4. Wbij do środka jajko\n</item>
+    </array>
+    <array name="recipe12">
+        <item name="name">Lorem ipsum 12</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+        bla bla\n
+        bla</item>
+    </array>
+    <array name="recipe13">
+        <item name="name">Lorem ipsum 13</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+    <array name="recipe14">
+        <item name="name">Lorem ipsum 14</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+    <array name="recipe15">
+        <item name="name">Lorem ipsum 15</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+    <array name="recipe16">
+        <item name="name">Lorem ipsum 16</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+    <array name="recipe17">
+        <item name="name">Lorem ipsum 17</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+    <array name="recipe18">
+        <item name="name">Lorem ipsum 18</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+    <array name="recipe19">
+        <item name="name">Lorem ipsum 19</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+    <array name="recipe20">
+        <item name="name">Lorem ipsum 20</item>
+        <item name="picture">@drawable/noimage</item>
+        <item name="steps">bla bla bla\n
+            bla bla\n
+            bla</item>
+    </array>
+
+    <array name="recipes">
+        <item>@array/recipe1</item>
+        <item>@array/recipe2</item>
+        <item>@array/recipe3</item>
+        <item>@array/recipe4</item>
+        <item>@array/recipe5</item>
+        <item>@array/recipe6</item>
+        <item>@array/recipe7</item>
+        <item>@array/recipe8</item>
+        <item>@array/recipe9</item>
+        <item>@array/recipe10</item>
+        <item>@array/recipe11</item>
+        <item>@array/recipe12</item>
+        <item>@array/recipe13</item>
+        <item>@array/recipe14</item>
+        <item>@array/recipe15</item>
+        <item>@array/recipe16</item>
+        <item>@array/recipe17</item>
+        <item>@array/recipe18</item>
+        <item>@array/recipe19</item>
+        <item>@array/recipe20</item>
+    </array>
+
 </resources>
